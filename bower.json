@@ -1,0 +1,11 @@
+{
+  "name": "angularparking",
+  "description": "parkingmgmtsystem",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}

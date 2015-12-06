@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="parkingApp">
+<head>
+	<meta charset="UTF-8">
+	<title>angularjs-parking</title>
+</head>
+<body ng-controller="parkingCtrl">
+
+
+<h1> Parking</h1>
+<table>
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>PN</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr ng-repeat="car in cars">
+	         <td>{{$index}}</td>
+			<td>{{car.plate | hyphenCasing}}</td>
+			</tr>
+	</tbody>
+</table>
+ 		 <form name = "carForm"> 
+ 		  <label>Enter </label>
+ 		  <input 
+ 		     type="text"
+ 		     ng-model="car.plate" 
+ 		     
+ 		     ng-pattern="/^[a-zA-Z0-9]+$/"
+ 		     ng-maxLength="8"
+ 		     ng-minLength="7">
+ 		  <button ng-click="save(car)" ng-disabled="carForm.$invalid">Save</button>
+ 		   <button ng-click="delete(car)" >Delete</button>
+ 		  </form>
+     <alert ng-show="carForm.plate.$invalid">
+        Fields are Invalid
+        </alert>
+	 <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+     <script type="text/javascript" src="app/scripts/app.js"></script>
+	<script type="text/javascript" src="app/scripts/controllers.js"></script>
+	<script type="text/javascript" src="app/scripts/filters.js"></script>
+      
+        </body>
+</html>
+
